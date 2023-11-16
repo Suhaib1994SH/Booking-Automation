@@ -1,0 +1,18 @@
+[
+  {
+    "start_date": "2023-12-01",
+    "end_date": "2023-12-10",
+    "distnations": [
+      "Istanbul",
+      "Jenin"
+    ],
+    "firstname": "Suhaib",
+    "lastname": "abufarha",
+    "email": "suhaib.fts@gmail.com",
+    "phone": "0599000000",
+    "Cardnumber": "4111111111111111",
+    "cardExpiratioDate": "12/25",
+    "CVCNumber": "989"
+
+  }
+]
