@@ -65,7 +65,7 @@
     <Compile Include="pages\hotelPage.cs" />
     <Compile Include="pages\MainPage.cs" />
     <Compile Include="pages\SearchResultsPage.cs" />
-    <Compile Include="TestSetup.cs" />
+    <Compile Include="TestCases.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

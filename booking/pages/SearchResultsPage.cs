@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using booking.pages;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
@@ -10,24 +11,31 @@ using System.Threading.Tasks;
 namespace booking.pages
 {
 
-  
-    internal static  class SearchResultsPage
+
+    internal static class SearchResultsPage 
     {
 
-        static ChromeDriver driver;
+       static ChromeDriver driver;
         public static void initDriver(ChromeDriver newDriver)
         {
-            driver = newDriver;
+          driver = newDriver;
         }
 
+        /// <summary>
+        /// click on See Avalibblt button
+        /// </summary>
         public static void clickOnSeeAvalibblty()
         {
-            Thread.Sleep((int)1000);
+            commonFunctions.waitInSeconds(1);
             driver.FindElements(By.XPath("//*[@data-testid='availability-cta-btn']"))[0].Click(); 
         }
-            public static void verifyBookingData()
+
+        /// <summary>
+        /// click on verify Booking Data
+        /// </summary>
+        public static void verifyBookingData()
         {
-            Thread.Sleep((int)1000);
+            commonFunctions.waitInSeconds(1);
             driver.FindElement(By.XPath("//*[@type='submit']")).Click();
         }
 

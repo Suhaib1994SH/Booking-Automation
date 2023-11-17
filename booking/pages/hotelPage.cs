@@ -21,19 +21,25 @@ namespace booking.pages
             driver = newDriver;
         }
 
+        /// <summary>
+        /// click on Reserve button
+        /// </summary>
         public static void clickOnReserve()
         {
-            Thread.Sleep((int)1000);
+            commonFunctions.waitInSeconds(1);
             driver.FindElement(By.Id("hp_book_now_button")).Click();
+            
         }
 
 
 
-
+        /// <summary>
+        /// click on Confirm Reserve button
+        /// </summary>
         public static void clickOnConfirmReserve()
         {
-            
-            Thread.Sleep((int)1000);
+
+            commonFunctions.waitInSeconds(1);
             driver.FindElement(By.Id("hp_book_now_button")).Click();
 
         }

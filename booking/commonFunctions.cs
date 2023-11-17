@@ -1,10 +1,15 @@
 ﻿using Newtonsoft.Json;
+using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
 
 namespace booking
 {
@@ -22,8 +27,14 @@ namespace booking
         public string CVCNumber;
         
     }
-    internal static class commonFunctions
+    
+    public static class commonFunctions
     {
+        /// <summary>
+        /// load json file
+        /// </summary>
+        /// <returns></returns>
+      
         public static List<Item> LoadJson()
         {
             List<Item> items;
@@ -34,7 +45,17 @@ namespace booking
             }
             return items;
         }
+        
+        /// <summary>
+        /// wait in seconds
+        /// </summary>
+        /// <param name="waitInSeconds"></param>
+        public static void waitInSeconds(double waitInSeconds)
+        {
+            waitInSeconds = waitInSeconds * 1000;
+            Thread.Sleep((int)waitInSeconds);
+        }
 
 
-    }
+        }
 }
