@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace booking.pages
 {
-    internal static class MainPage
+    public static class MainPage
     {
 
         

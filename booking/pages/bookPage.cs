@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace booking.pages
 {
-    internal static class bookPage
+    public static class bookPage
     {
         static ChromeDriver driver;
         public static void initDriver(ChromeDriver newDriver)

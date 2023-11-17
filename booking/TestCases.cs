@@ -14,11 +14,14 @@ using System.Xml.Linq;
 using Newtonsoft.Json;
 using System.IO;
 using NUnit.Framework;
+using System.Runtime.CompilerServices;
 
 namespace booking
 {
+
+
     [TestFixture]
-    internal static class TestCases
+    public static class TestCases
     {
 
         static ChromeDriver driver = new ChromeDriver();
@@ -33,12 +36,8 @@ namespace booking
 
         }
 
-
-
-        public static void Main() { TC_7_verify_that_user_can_confirm_the_payment_for_booking_an_Apartment(); }
-
         [Test,Retry(2)]
-        private static void TC_7_verify_that_user_can_confirm_the_payment_for_booking_an_Apartment()
+        public static void TC_7_verify_that_user_can_confirm_the_payment_for_booking_an_Apartment()
         {
 
             MainPage.initDriver(driver);
@@ -60,7 +59,6 @@ namespace booking
             bookPage.initDriver(driver);
             bookPage.fillBookingDetails(items[0].firstname, items[0].lastname, items[0].email, items[0].phone);
             commonFunctions.waitInSeconds(1);
-            //driver.SwitchTo().Frame(driver.FindElement(By.CssSelector("#bookForm > div.payment-section > div.payment-instrument-section.bui-spacer--large > div > div > div > div:nth-child(2) > div > div:nth-child(2) > iframe")));
             bookPage.initDriver(driver);
             bookPage.fillPaymentDetails(items[0].Cardnumber, items[0].cardExpiratioDate, items[0].CVCNumber);
 
@@ -74,10 +72,8 @@ namespace booking
         public static void End()
         {
 
-            if (driver != null)
-            {
-                driver.Quit();
-            }
+            driver.Close();
+            driver.Quit();
 
         }
 

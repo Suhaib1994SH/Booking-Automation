@@ -12,7 +12,7 @@ namespace booking.pages
 {
 
 
-    internal static class SearchResultsPage 
+    public static class SearchResultsPage 
     {
 
        static ChromeDriver driver;
