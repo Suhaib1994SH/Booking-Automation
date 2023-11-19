@@ -11,21 +11,15 @@ using System.Threading.Tasks;
 
 namespace booking.pages
 {
-    public static class hotelPage
+    public class hotelPage : commonFunctions
     {
-
-
-        static ChromeDriver driver;
-        public static void initDriver(ChromeDriver newDriver)
-        {
-            driver = newDriver;
-        }
 
         /// <summary>
         /// click on Reserve button
         /// </summary>
         public static void clickOnReserve()
         {
+            driver.SwitchTo().Window(driver.WindowHandles.Last());
             commonFunctions.waitInSeconds(1);
             driver.FindElement(By.Id("hp_book_now_button")).Click();
             

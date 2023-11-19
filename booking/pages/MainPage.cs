@@ -11,16 +11,9 @@ using System.Threading.Tasks;
 
 namespace booking.pages
 {
-    public static class MainPage
-    {
+    public class MainPage : commonFunctions
 
-        
-
-        static ChromeDriver driver;
-        public static void initDriver(ChromeDriver newDriver)
-        {
-            driver = newDriver;
-        }
+    { 
 
         /// <summary>
         /// navigate To Main Page
@@ -43,7 +36,7 @@ namespace booking.pages
 
             try
             {
-                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
                 wait.Until(d => (bool)(driver.FindElement(By.XPath("//*[@aria-label='Dismiss sign-in info.']"))).Displayed);
                 driver.FindElement(By.XPath("//*[@aria-label='Dismiss sign-in info.']")).Click();
             }
@@ -79,6 +72,7 @@ namespace booking.pages
         /// </summary>
         public static void clickSearch()
         {
+            commonFunctions.waitInSeconds(1);
             driver.FindElement(By.XPath("//*[@type='submit']")).Click();
         }
     }

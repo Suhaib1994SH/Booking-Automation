@@ -9,13 +9,9 @@ using System.Threading.Tasks;
 
 namespace booking.pages
 {
-    public static class bookPage
+    public class bookPage : commonFunctions
     {
-        static ChromeDriver driver;
-        public static void initDriver(ChromeDriver newDriver)
-        {
-            driver = newDriver;
-        }
+      
 
         /// <summary>
         /// Execute Java script

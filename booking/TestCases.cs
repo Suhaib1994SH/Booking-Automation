@@ -21,10 +21,8 @@ namespace booking
 
 
     [TestFixture]
-    public static class TestCases
+    public class TestCases : commonFunctions
     {
-
-        static ChromeDriver driver = new ChromeDriver();
 
         /// <summary>
         /// Run Method Only Once before tests
@@ -40,26 +38,15 @@ namespace booking
         public static void TC_7_verify_that_user_can_confirm_the_payment_for_booking_an_Apartment()
         {
 
-            MainPage.initDriver(driver);
-            SearchResultsPage.initDriver(driver);
             MainPage.navigateToMainPage();
             List<Item> items = commonFunctions.LoadJson();
             MainPage.fillDestName(items[0].distnations[0]);
-            commonFunctions.waitInSeconds(1);
             MainPage.fillFrstEndDates(items[0].start_date, items[0].end_date);
             MainPage.clickSearch();
-            commonFunctions.waitInSeconds(1);
             SearchResultsPage.clickOnSeeAvalibblty();
-            driver.SwitchTo().Window(driver.WindowHandles.Last());
-            hotelPage.initDriver(driver);
-            commonFunctions.waitInSeconds(1);
             hotelPage.clickOnReserve();
-            commonFunctions.waitInSeconds(1);
             hotelPage.clickOnConfirmReserve();
-            bookPage.initDriver(driver);
             bookPage.fillBookingDetails(items[0].firstname, items[0].lastname, items[0].email, items[0].phone);
-            commonFunctions.waitInSeconds(1);
-            bookPage.initDriver(driver);
             bookPage.fillPaymentDetails(items[0].Cardnumber, items[0].cardExpiratioDate, items[0].CVCNumber);
 
         }

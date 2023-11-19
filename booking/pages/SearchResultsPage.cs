@@ -12,14 +12,8 @@ namespace booking.pages
 {
 
 
-    public static class SearchResultsPage 
+    public class SearchResultsPage : commonFunctions
     {
-
-       static ChromeDriver driver;
-        public static void initDriver(ChromeDriver newDriver)
-        {
-          driver = newDriver;
-        }
 
         /// <summary>
         /// click on See Avalibblt button

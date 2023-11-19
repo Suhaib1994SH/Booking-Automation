@@ -28,13 +28,20 @@ namespace booking
         
     }
     
-    public static class commonFunctions
+    public class commonFunctions
     {
+
+        /// <summary>
+        /// chromr driver definition
+        /// </summary>
+        public static ChromeDriver driver = new ChromeDriver();
+
+
         /// <summary>
         /// load json file
         /// </summary>
         /// <returns></returns>
-      
+
         public static List<Item> LoadJson()
         {
             List<Item> items;
